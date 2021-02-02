@@ -1,0 +1,16 @@
+[
+  {
+    "nombre": "pc gamer",
+    "precio": 5400,
+    "id": "3f8dfa00-f2fd-43fc-ac08-b6a34edc4aa0"
+  },
+  {
+    "nombre": "muñequitos",
+    "precio": 540,
+    "id": "789fd92f-a4f8-441c-8682-809506e3c10c"
+  },
+  { "nombre": "mesa", "precio": 120 },
+  { "nombre": "silla", "precio": 45 },
+  { "nombre": "escritorio", "precio": 450 },
+  { "nombre": "cama", "precio": 220 }
+]

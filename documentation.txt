@@ -1,0 +1,91 @@
+funcion1(()=>{
+    return algo
+}).next((parametro)=>{
+    return algo2
+}).next((otro)=>{
+
+})
+
+
+____________________
+INICIAMOS CON NODE, YA QUE VAMOS A INSTALAR MODULOS
+npm init --yes
+
+DEBES TENER INSTALADO npm
+
+UNA REST API, COMO SABRÁS, ES EL CONJUNTO DE HERRAMIENTAS Y RUTAS
+PARA QUE CUALQUIER APLICACIÓN CREADA DESDE EL FRONT, PUEDA ACCEDER
+A ELLA SEGÚN RESTRICCIONES Y LA INFORMACIÓN QUE ACOMPAÑE, POR 
+EJEMPLO LO QUE VIMOS AYER CON EL ID
+
+EL index.js LO UBICAMOS DENTRO DE LA CARPETA src CON EL FIN
+DE ASIMILAR BUENAS PRÁCTICAS DE PROGRAMACIÓN, SOLO LO QUE ESTÁ
+DENTRO DE src FORMA PARTE DEL PROYECTO.
+
+¿TE SALE ERROR NPM ?
+
+ESTE BLOC TIENE UN EJEMPLO DE COMO ESTARÁ TODO, ME GUIARÉ DE AHÍ PARA
+NO PERDER TIEMPO
+
+BUENO HACEMOS LO DE LA VEZ PASADA, instalamos dependencias
+
+a partir de acá empezaremos con minúscula
+
+//tutorial
+
+1 Instalamos dependencias, para instalar más de una colocamos espacios entre
+las dependencias, nodemon aparte y como desarrollo
+2 No trabajaremos con base de datos aún, por el momento lo hacemos con un
+archivo.json, lo creamos fuera del src
+
+2. uuid es para generar id aleatorios(cuando veamos BD como mongodb, verás
+que él solo te genera los id)
+3. fs(file system), nos ayuda a leer y anotar o editar los archivos de distinto
+formato.
+4. cors es para que toda solicitud a nuestra rest API, o sea este PROYECTO
+tenga requisitos para acceder, de lo contrario habrán errores como el
+accesserror.
+
+5. Si alguna dependencia sale error, intenta instalarla nuevamente; el error 
+se solucionó
+
+6. EL arcivo.json contendrá la información
+
+7.
+
+async function save(){
+    const res = await writeFile('data.json', JSON.stringify(items), 'utf-8');
+}
+
+async function open(){
+    const res = await readFile('data.json', 'utf-8');
+    items = JSON.parse(res);
+    console.log('open',items);
+}
+Estas son dos funciones ASÍNCRONAS, es decir, que no dependen de otra 
+tarea para funcionar, si por ejemplo hay una tarea después de ella que debe realizarse
+entonces se hará, debido a que como es asíncrona, las demás pueden hacerse normal
+mente, a diferencia de otras, que necesitarías que laa actual termine para que recién
+las otras continuen. o sea puede darse el caso de que dos tareas se hagan a la vez,
+al ser asíncrona una de ellas, o pueden ser ambas. OJO, solo se debe usar asíncronos
+procesos, cuando estos demanden mucho tiempo, las buenas prácticas sugieren que se
+dan en la lectura o escritura de: archivos, bases de datos, webservices, etc. O sea
+servicios.
+Todo async tiene su await
+
+
+ const res = await writeFile('data.json', JSON.stringify(items), 'utf-8');
+ Lo que hace esta línea es, recibe como parámetros: archivo a guardar información,
+ lo que vas a guardar ahí, y el formato. No olvides que en la web es JSON
+ pero en nuestro proyecto aún tiene notación UTF 8
+
+8. morgan: estados de consulta
+npm i morgan
+
+codigo 304 es que todo salió bien pero algo falló en el frontend, 
+en este caso no hay problemas por que no hay vista, solo es archivos.json
+
+9. Como ves, ya podemos ver nuestros elementos en la ruta <3
+10.  Entonces añado el id(Si te das cuenta el req.body solo tendrá el nombre y el 
+    precio, entonces ¿Por que req.body['id'] es posible si no existe id?), justamente
+    por que es un objeto Javascript, no una nomenclatura sql, vale?
